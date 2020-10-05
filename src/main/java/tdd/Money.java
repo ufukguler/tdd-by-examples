@@ -1,3 +1,5 @@
+package tdd;
+
 /**
  * created by: ufuk on 4.10.2020 17:18
  */
@@ -14,11 +16,11 @@ public class Money implements Expression {
         return currency;
     }
 
-    public static Money dollar(int amount){
+    public static Money dollar(int amount) {
         return new Money(amount, "USD");
     }
 
-    public static Money franc(int amount){
+    public static Money franc(int amount) {
         return new Money(amount, "CHF");
     }
 
@@ -29,25 +31,25 @@ public class Money implements Expression {
     }
 
     @Override
-    public Money reduce(Bank bank, String to){
-        //return this;
-        //int rate = (currency.equals("CHF") && to.equals("USD")) ? 2 : 1;
+    public Money reduce(Bank bank, String to) {
         return new Money(amount / bank.rate(this.currency, to), to);
     }
 
     @Override
     public String toString() {
-        return "Money{" +
+        return "tdd.Money{" +
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';
     }
 
-    public Money times(int multiplier) {
+    @Override
+    public Expression times(int multiplier) {
         return new Money(amount * multiplier, this.currency);
     }
 
-    public Expression plus(Money addend){
+    @Override
+    public Expression plus(Expression addend) {
         return new Sum(this, addend);
     }
 }

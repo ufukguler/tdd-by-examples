@@ -1,3 +1,5 @@
+package tdd;
+
 import java.util.Objects;
 /**
  * created by: ufuk on 5.10.2020 16:32
