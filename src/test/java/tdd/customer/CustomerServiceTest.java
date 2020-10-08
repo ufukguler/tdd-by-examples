@@ -3,12 +3,11 @@ package tdd.customer;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.junit.jupiter.api.TestInstance;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 public class CustomerServiceTest {
 
     private CustomerService customerService;

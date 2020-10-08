@@ -5,7 +5,8 @@ import junitparams.naming.TestCaseName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
+
 
 @RunWith(JUnitParamsRunner.class)
 public class ParametersExampleTest {
