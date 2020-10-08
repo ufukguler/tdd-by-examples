@@ -1,4 +1,4 @@
-package tdd;
+package tdd.tdd;
 
 /**
  * created by: ufuk on 4.10.2020 17:18
@@ -24,10 +24,11 @@ public class Money implements Expression {
         return new Money(amount, "CHF");
     }
 
+    @Override
     public boolean equals(Object object) {
         Money money = (Money) object;
         return amount == money.amount
-                && this.currency == money.currency;
+                && this.currency.equals(money.currency);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class Money implements Expression {
 
     @Override
     public String toString() {
-        return "tdd.Money{" +
+        return "tdd.tdd.Money{" +
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';

@@ -1,9 +1,9 @@
-package tdd;
+package tdd.tdd;
 
 public interface Expression {
     Money reduce(Bank bank, String to);
 
-    public Expression plus(Expression addend);
+    Expression plus(Expression addend);
 
     Expression times(int multipler);
 }

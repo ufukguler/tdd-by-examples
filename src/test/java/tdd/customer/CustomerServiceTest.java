@@ -1,20 +1,24 @@
 package tdd.customer;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+
 import org.junit.jupiter.api.TestInstance;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class CustomerServiceTest {
+public class CustomerServiceTest {
 
     private CustomerService customerService;
     private final CustomerRepositoryStub customerRepository = new CustomerRepositoryStub();
     private NotifyService notifyService;
 
-    @BeforeAll
+    /**
+     * runs before all tests
+     */
+    @Before
     public void setUp() {
         customerService = new CustomerService();
         notifyService = Mockito.mock(NotifyService.class);
@@ -24,7 +28,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void testCustomerSave() {
+    public void testCustomerSave() {
         Customer customer = new Customer("customer", 1);
         customerService.saveCustomer(customer);
         assertEquals(customer, customerRepository.findById(customer.getId()));
@@ -32,7 +36,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void testCustomerDelete() {
+    public void testCustomerDelete() {
 
         Customer customer = new Customer("customer", 2);
         customerService.saveCustomer(customer);
