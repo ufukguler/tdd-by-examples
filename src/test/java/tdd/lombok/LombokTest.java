@@ -9,7 +9,7 @@ public class LombokTest {
 
     @Test
     public void testLombok() {
-        Gift gift = Gift.builder().description("desc").name("myGift").id(1).price(12).build();
+        Gift gift = Gift.builder().name("myGift").build();
         System.out.println(gift.toString());
     }
 }

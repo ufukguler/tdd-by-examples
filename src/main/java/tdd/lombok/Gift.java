@@ -10,8 +10,5 @@ import lombok.*;
 @Data
 @Builder
 public class Gift {
-    private int id;
     private String name;
-    private String description;
-    private int price;
 }

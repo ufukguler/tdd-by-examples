@@ -1,8 +1,6 @@
 package tdd.customer;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,12 +11,12 @@ public class CustomerRepositoryStub extends CustomerRepository {
     private Map<Integer, Customer> customerList = new HashMap<>();
 
     @Override
-    void save(Customer customer) {
+    public void save(Customer customer) {
         customerList.put(customer.id, customer);
     }
 
     @Override
-    void delete(Integer customerId) {
+    public void delete(Integer customerId) {
         customerList.remove(customerId);
     }
 
